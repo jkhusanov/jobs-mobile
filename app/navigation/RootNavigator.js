@@ -12,7 +12,7 @@ export default RootNavigator = createStackNavigator({
       gesturesEnabled: false
     }
   },
-  AuthStack: {
+  Auth: {
     screen: AuthStack,
     navigationOptions: {
       gesturesEnabled: false
@@ -28,7 +28,7 @@ export default RootNavigator = createStackNavigator({
   {
     headerMode: "none",
     mode: "modal",
-    initialRouteName: "Home"
+    initialRouteName: "Welcome"
   }
 
 );

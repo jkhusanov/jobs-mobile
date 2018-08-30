@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, Button } from 'react-native';
 
 export default class AuthScreen extends React.Component {
   render() {
@@ -8,6 +8,9 @@ export default class AuthScreen extends React.Component {
         <Text>
           AuthScreen
         </Text>
+        <Button onPress={() => {this.props.navigation.navigate('Home')}}
+          title="Done"
+        />
       </View>
     )
   }
