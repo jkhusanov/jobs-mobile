@@ -1,10 +1,15 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import RootNavigator from './app/navigation/RootNavigator';
+import { Provider } from 'react-redux';
+import store from './app/store';
+
 export default class App extends React.Component {
   render() {
     return (
-      <RootNavigator/>
+      <Provider store={store}>
+        <RootNavigator/>
+      </Provider>
     );
   }
 }

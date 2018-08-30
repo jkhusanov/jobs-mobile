@@ -21,7 +21,7 @@ export default class WelcomeScreen extends React.Component {
           <Text style={styles.text}>Swipe through Jobs</Text>
         </LinearGradient>
         <LinearGradient  colors={['#86A8E7', '#91eae4']}  style={styles.slide3}>
-          <Text style={styles.text}>Apply or Save</Text>
+          <Text style={styles.text}>Apply and Save</Text>
           <Button
             title={'Get Started'}
             containerViewStyle={{ marginTop: 20 }}
