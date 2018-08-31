@@ -5,7 +5,7 @@ Following advanced Udemy [React Native: Advanced Concepts course](https://www.ud
 Creating an awesome app that helps you find jobs near you.
 
 
-### [Demo - Try it on Expo, coming soon](https://expo.io/@jkhusanov/jobs-mobile)
+### [Demo - Try it on Expo](https://expo.io/@jkhusanov/jobs-mobile)
 
 ## Demo, screenshots, coming soon
 <!-- <div style={{display: flex; flex-direction: row}}>
@@ -29,7 +29,9 @@ exp ios
 
 ## TODO
 
-- [x] Implement **Navigation** 
+- [x] Implement **Navigation**
+- [x] Integrate  **Facebook login**
+- [x] Redux setup 
 - [ ] Attach the screenshots/gif of screens to `README.MD`
 
 ## Wireframes and project plan
