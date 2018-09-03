@@ -31,21 +31,16 @@ exp ios
 
 - [x] Implement **Navigation**
 - [x] Integrate  **Facebook login**
-- [x] Redux setup 
+- [x] Redux setup
+- [x] Finish auth flow with adding skip button 
 - [ ] Attach the screenshots/gif of screens to `README.MD`
 
 ## Wireframes and project plan
 
 
-<!-- <div style={{display: flex; flex-direction: row}}>
-  <img  alt="wireframe1" src="screenshots/tech-stack.png" width="450" />
+<div style={{display: flex; flex-direction: row}}>
+  <img  alt="wireframe1" src="screenshots/plan.png" width="500" />
   <p></p>
-  <img  alt="wireframe2" src="screenshots/app-flow.png" width="450" />
-  <p></p>
-  <img  alt="wireframe3" src="screenshots/handling-user.png" width="450" />
-  <p></p>
-  <img  alt="wireframe3" src="screenshots/simple-interface.png" width="450" />
-  <p></p>
-</div> -->
+</div>
 
 

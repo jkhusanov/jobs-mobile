@@ -4,7 +4,8 @@ import { Facebook } from 'expo';
 import API_KEYS from '../utils/config_keys';
 import {
   FACEBOOK_LOGIN_SUCCESS,
-  FACEBOOK_LOGIN_FAIL
+  FACEBOOK_LOGIN_FAIL,
+  SKIP_BUTTON_PRESSED,
 } from './types';
 
 // const API_KEY = API_KEYS[0].key
@@ -34,5 +35,17 @@ const doFacebookLogin = async dispatch => {
   }
 
   await AsyncStorage.setItem('fb_token', token);
-  dispatch({ type: FACEBOOK_LOGIN_SUCCESS, payload: token});
+  dispatch({ type: FACEBOOK_LOGIN_SUCCESS, payload: token });
+};
+
+export const skipLogin = () => async dispatch => {
+  let token = await AsyncStorage.getItem('fb_token');
+  if (token) {
+    // Dispatch an action saying FB login is done
+    dispatch({ type: SKIP_BUTTON_PRESSED, payload: token });
+  }
+  else {
+    await AsyncStorage.setItem('fb_token', 'skipped');
+    dispatch({ type: SKIP_BUTTON_PRESSED, payload: token });
+  }
 };

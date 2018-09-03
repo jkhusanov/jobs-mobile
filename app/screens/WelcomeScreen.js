@@ -1,16 +1,38 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, AsyncStorage } from 'react-native';
 import { Button } from 'react-native-elements';
-import { LinearGradient } from 'expo';
+import { LinearGradient, AppLoading } from 'expo';
 import Swiper from 'react-native-swiper';
 
 export default class WelcomeScreen extends React.Component {
   static navigationOptions = {
     header: null,
   };
-  render() {
-    return (
+  state = {
+    token: null
+  }
 
+  async componentDidMount() {
+    // AsyncStorage.removeItem('fb_token')
+
+    let token = await AsyncStorage.getItem('fb_token')
+    console.log(token)
+    if (token) {
+      this.setState({ token });
+      this.props.navigation.navigate('Home');
+    }
+    else {
+      this.setState({ token: false });
+    }
+
+  }
+
+  render() {
+
+    if(this.state.token === null) {
+      return <AppLoading/>
+    }
+    return (
       <Swiper style={styles.wrapper} loop={false}>
         <LinearGradient colors={['#2193b0', '#6dd5ed']} style={styles.slide1} >
           <Text style={styles.text}>Set Your Location</Text>
