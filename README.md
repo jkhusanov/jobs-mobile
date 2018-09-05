@@ -32,14 +32,15 @@ exp ios
 - [x] Implement **Navigation**
 - [x] Integrate  **Facebook login**
 - [x] Redux setup
-- [x] Finish auth flow with adding skip button 
+- [x] Finish auth flow with adding skip button
+- [x] Map add to the Location screen 
 - [ ] Attach the screenshots/gif of screens to `README.MD`
 
 ## Wireframes and project plan
 
 
 <div style={{display: flex; flex-direction: row}}>
-  <img  alt="wireframe1" src="screenshots/plan.png" width="500" />
+  <img  alt="wireframe1" src="screenshots/plan.png" width="750" />
   <p></p>
 </div>
 

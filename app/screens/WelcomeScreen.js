@@ -16,7 +16,7 @@ export default class WelcomeScreen extends React.Component {
     // AsyncStorage.removeItem('fb_token')
 
     let token = await AsyncStorage.getItem('fb_token')
-    console.log(token)
+
     if (token) {
       this.setState({ token });
       this.props.navigation.navigate('Home');
