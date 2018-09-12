@@ -1,8 +1,15 @@
 import React from 'react';
-import { View, ActivityIndicator } from 'react-native';
+import { View, ActivityIndicator, StyleSheet } from 'react-native';
 import { MapView } from 'expo';
+import { Button } from 'react-native-elements'; 
+import { connect } from 'react-redux';
 
-export default class MapScreen extends React.Component {
+import * as actions from '../actions';
+
+class MapScreen extends React.Component {
+  static navigationOptions = {
+    header: null,
+  };
   state = {
     mapLoaded: false,
     region: {
@@ -20,6 +27,13 @@ export default class MapScreen extends React.Component {
   onRegionChangeComplete = (region) => {
     this.setState({ region });
   }
+
+  onButtonPress = () => {
+    this.props.fetchJobs(this.state.region, () => {
+      this.props.navigation.navigate('DeckTab')
+    });
+  }
+
   render() {
     const { region, mapLoaded } = this.state
     if(mapLoaded) {
@@ -35,7 +49,33 @@ export default class MapScreen extends React.Component {
           region={region}
           onRegionChangeComplete={this.onRegionChangeComplete}
         />
+        <View style={styles.buttonContainer}>
+          <Button 
+            
+            title="Search This Area"
+            buttonStyle={{            
+              backgroundColor: '#009688',
+              width: 300,
+              height: 45,
+            }}
+            icon={{
+              name: 'search',
+              color: 'white',
+            }}
+            onPress={this.onButtonPress}
+            />
+        </View>
       </View>
     )
   }
 }
+const styles = StyleSheet.create({
+  buttonContainer: {
+    position: 'absolute',
+    bottom: 20,
+    alignSelf: 'center',
+    // left: 0,
+    // right: 0,
+  }
+})
+export default connect(null, actions)(MapScreen);
