@@ -7,6 +7,7 @@ import {
   StyleSheet,
   LayoutAnimation,
   UIManager,
+  Platform,
 } from 'react-native';
 
 
@@ -19,6 +20,7 @@ export default class Swipe extends React.Component {
   static defaultProps = {
     onSwipeRight: () => {},
     onSwipeLeft: () => {},
+    keyProp: 'id'
   }
   constructor(props) {
     super(props)
@@ -101,13 +103,13 @@ export default class Swipe extends React.Component {
       return this.props.renderNoMoreCards();
     }
     
-    return this.props.data.map((item, i) => {
+    const deck = this.props.data.map((item, i) => {
       if (i < this.state.index) { return null; }
 
       if (i === this.state.index) {
         return (
           <Animated.View
-            key={item.id}
+            key={item[this.props.keyProp]}
             style={[this.getCardStyle(), styles.cardStyle]}
             {...this._panResponder.panResponder.panHandlers}
           >
@@ -117,14 +119,16 @@ export default class Swipe extends React.Component {
       }
       return (
         <Animated.View 
-          key={item.id} 
-          style={[styles.cardStyle, { top: 10 * (i - this.state.index) }]}
+          key={item[this.props.keyProp]} 
+          style={[styles.cardStyle, { top: 10 * (i - this.state.index), zIndex: -i}]}
         >
           {this.props.renderCard(item)}
         </Animated.View>
       )
 
-    }).reverse();
+    });
+    return Platform.OS === 'android' ? deck: deck.reverse();
+
   }
   render() {
     return (
