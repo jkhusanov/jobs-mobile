@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, Platform } from 'react-native';
 import { connect } from 'react-redux';
 import { Card, Button } from 'react-native-elements';
 import { MapView } from 'expo';
-
+import * as actions from '../actions';
 import Swipe from '../components/Swipe';
 
 
@@ -59,6 +59,7 @@ class DeckScreen extends React.Component {
           data={this.props.jobs}
           renderCard={this.renderCard}
           renderNoMoreCards={this.renderNoMoreCards}
+          onSwipeRight={job => this.props.likeJob(job)}
           keyProp="id"
         />
 
@@ -78,4 +79,4 @@ function mapStateToProps({ jobs }) {
   return { jobs: jobs };
 
 }
-export default connect(mapStateToProps)(DeckScreen);
+export default connect(mapStateToProps, actions)(DeckScreen);
