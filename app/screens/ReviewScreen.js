@@ -1,8 +1,9 @@
 import React from 'react';
-import { View, Text, Platform } from 'react-native';
-import { Button } from 'react-native-elements'
+import { View, Text, Platform, ScrollView, StyleSheet } from 'react-native';
+import { Button, Card } from 'react-native-elements'
+import { connect } from 'react-redux'; 
 
-export default class ReviewScreen extends React.Component {
+class ReviewScreen extends React.Component {
   static navigationOptions = ({ navigation }) => ({
     headerTitle: 'Review Jobs',
     headerRight: (
@@ -10,8 +11,9 @@ export default class ReviewScreen extends React.Component {
         onPress={() => navigation.navigate('Settings')}
         title="Settings"
         titleStyle={{ color: "rgba(0, 122, 255, 1)" }}
-        buttonStyle = {{
-          backgroundColor: "rgba(0, 0, 0, 0)"}
+        buttonStyle={{
+          backgroundColor: "rgba(0, 0, 0, 0)"
+        }
         }
         clear
       />
@@ -21,13 +23,46 @@ export default class ReviewScreen extends React.Component {
     }
 
   })
+
+  renderLikedJobs() {
+    return this.props.likedJobs.map(job => {
+      return (
+        <Card
+          key={job.id}
+        >
+          <View style={{ height: 200 }}>
+            <View style={styles.detailWrapper}>
+              <Text style={styles.italics}>{job.company}</Text>
+              <Text style={styles.italics}>{job.created_at}</Text>
+            </View>
+          </View>
+        </Card>
+      )
+    })
+  }
+
   render() {
     return (
       <View>
-        <Text>
-          ReviewScreen
-        </Text>
+        <ScrollView>
+          {this.renderLikedJobs()}
+        </ScrollView>
       </View>
     )
   }
 }
+const styles = StyleSheet.create({
+  detailWrapper: {
+    marginBottom: 10,
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+  },
+  italics: {
+    fontStyle: 'italic',
+  }
+})
+function mapStateToProps(state) {
+  return { likedJobs: state.likedJobs }
+}
+
+export default connect(mapStateToProps)(ReviewScreen);
