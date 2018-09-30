@@ -18,13 +18,13 @@ const ReviewStack = createStackNavigator({
 );
 export default ReviewStack;
 
-// ReviewStack.navigationOptions = ({ navigation }) => {
-//   let tabBarVisible = true;
-//   if (navigation.state.index > 0) {
-//     tabBarVisible = false;
-//   }
+ReviewStack.navigationOptions = ({ navigation }) => {
+  let tabBarVisible = true;
+  if (navigation.state.index > 0) {
+    tabBarVisible = false;
+  }
 
-//   return {
-//     tabBarVisible,
-//   };
-// };
+  return {
+    tabBarVisible,
+  };
+};
