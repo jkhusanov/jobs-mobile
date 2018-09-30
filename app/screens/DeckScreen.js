@@ -22,6 +22,11 @@ class DeckScreen extends React.Component {
         key={job.id}
         image={job.company_logo ? {uri: job.company_logo}: {uri: "https://cdn.pixabay.com/photo/2017/10/31/09/55/dream-job-2904780_1280.jpg"}}
         imageProps={{resizeMode: 'contain'}}
+        imageStyle={{
+          width: 300,
+          height: 150,
+          alignSelf: 'center'
+        }}
       >
         {/* <View style={{ height: 300 }}>
           <MapView
