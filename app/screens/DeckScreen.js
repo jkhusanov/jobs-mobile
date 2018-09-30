@@ -5,9 +5,19 @@ import { Card, Button } from 'react-native-elements';
 import { MapView } from 'expo';
 import * as actions from '../actions';
 import Swipe from '../components/Swipe';
+import { Entypo } from '@expo/vector-icons';
 
 
 class DeckScreen extends React.Component {
+
+  static navigationOptions = ({ navigation }) => ({
+    headerTitle: 'Jobs',
+    headerStyle: {
+      // marginTop: Platform.OS === 'android' ?  Expo.Constants.statusBarHeight : 0
+    }
+
+  })
+
 
   renderCard(job) {
     const initialRegion = {
@@ -20,10 +30,10 @@ class DeckScreen extends React.Component {
       <Card
         title={job.title}
         key={job.id}
-        image={job.company_logo ? {uri: job.company_logo}: {uri: "https://cdn.pixabay.com/photo/2017/10/31/09/55/dream-job-2904780_1280.jpg"}}
-        imageProps={{resizeMode: 'contain'}}
+        image={job.company_logo ? { uri: job.company_logo } : { uri: "https://cdn.pixabay.com/photo/2017/10/31/09/55/dream-job-2904780_1280.jpg" }}
+        imageProps={{ resizeMode: 'contain' }}
         imageStyle={{
-          width: 300,
+          width: 250,
           height: 150,
           alignSelf: 'center'
         }}
@@ -47,10 +57,25 @@ class DeckScreen extends React.Component {
     );
   }
 
-  renderNoMoreCards() {
+  renderNoMoreCards = () => {
     return (
-      <Card title="No more jobs">
-
+      <Card title="No More Jobs">
+        <Button
+          title="Back To Map"
+          icon={
+            <Entypo
+              name='location'
+              color='white'
+            />
+          }
+          buttonStyle={{
+            backgroundColor: '#009688',
+            width: 250,
+            height: 45,
+            alignSelf: 'center'
+          }}
+          onPress={() => this.props.navigation.navigate('MapTab')}
+        />
       </Card>
     )
   }

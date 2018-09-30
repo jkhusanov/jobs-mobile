@@ -9,7 +9,7 @@ class ReviewScreen extends React.Component {
     result: null,
   };
   static navigationOptions = ({ navigation }) => ({
-    headerTitle: 'Review Jobs',
+    headerTitle: 'Saved Jobs',
     headerRight: (
       <Button
         onPress={() => navigation.navigate('Settings')}
@@ -38,7 +38,7 @@ class ReviewScreen extends React.Component {
           image={company_logo ? { uri: company_logo } : { uri: "https://cdn.pixabay.com/photo/2017/10/31/09/55/dream-job-2904780_1280.jpg" }}
           imageProps={{ resizeMode: 'contain' }}
           imageStyle={{
-            width: 300,
+            width: 250,
             height: 150,
             alignSelf: 'center'
           }}
@@ -53,7 +53,7 @@ class ReviewScreen extends React.Component {
               titleStyle={{ fontWeight: "600" }}
               buttonStyle={{
                 backgroundColor: '#009688',
-                width: 300,
+                width: 250,
                 height: 45,
                 alignSelf: 'center'
               }}

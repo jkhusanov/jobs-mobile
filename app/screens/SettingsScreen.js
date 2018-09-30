@@ -25,7 +25,6 @@ class SettingsScreen extends React.Component {
       <View style={{flex: 1, justifyContent: 'center'}}>
         <Button
           title="Reset Liked Jobs"
-          large
           titleStyle={{ fontWeight: "600" }}
           icon={{ name: 'delete-forever', color: 'white' }}
           buttonStyle={{
