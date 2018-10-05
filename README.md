@@ -20,12 +20,22 @@ Creating an awesome app that helps you find jobs near you.
 ```
 git clone https://github.com/jkhusanov/jobs-mobile.git
 
-exp start
+expo start
 
-exp ios
+expo ios
 ```
 
+## Tech Stack
 
+* React Native
+* React Native Elements
+* Expo
+* Axios
+* lodash
+* React Navigation
+* React Native Swiper
+* Redux
+* Redux Persist
 
 ## TODO
 
@@ -38,7 +48,10 @@ exp ios
 - [x] Import  **Swipe** component and style it
 - [x] Add reducers for liked jobs and show them on **Saved** screen
 - [x] Implement Apply for jobs feature
-- [x] Save jobs locally/offline
+- [x] Save jobs locally/offline with **Redux Persist**
+- [ ] **Push Notifications** for updates
+- [ ] Try Lottie [animations](https://github.com/react-community/lottie-react-native) on intro screen
+- [ ] UI polish such as time and date for jobs
 - [ ] Attach the screenshots/gif of screens to `README.MD`
 
 ## Wireframes and project plan
