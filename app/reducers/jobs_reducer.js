@@ -6,7 +6,7 @@ const INITIAL_STATE = {
   results: []
 }
 
-export default function(state = INITIAL_STATE, action) {
+export default function(state = INITIAL_STATE.results, action) {
   switch (action.type) {
     case FETCH_JOBS:
       return action.payload;
