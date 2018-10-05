@@ -37,7 +37,8 @@ exp ios
 - [x] Make API call to **GitHub Jobs** and store them in Redux
 - [x] Import  **Swipe** component and style it
 - [x] Add reducers for liked jobs and show them on **Saved** screen
-- [ ] Implement Apply for jobs feature
+- [x] Implement Apply for jobs feature
+- [x] Save jobs locally/offline
 - [ ] Attach the screenshots/gif of screens to `README.MD`
 
 ## Wireframes and project plan

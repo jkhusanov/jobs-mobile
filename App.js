@@ -2,13 +2,19 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import RootNavigator from './app/navigation/RootNavigator';
 import { Provider } from 'react-redux';
-import store from './app/store';
+import { PersistGate } from 'redux-persist/integration/react'
+import configurationStore from './app/store';
+
+
 
 export default class App extends React.Component {
   render() {
+    const { persistor, store } = configurationStore();
     return (
       <Provider store={store}>
+      <PersistGate persistor={persistor}>
         <RootNavigator/>
+      </PersistGate>
       </Provider>
     );
   }
