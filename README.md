@@ -49,7 +49,7 @@ expo ios
 - [x] Add reducers for liked jobs and show them on **Saved** screen
 - [x] Implement Apply for jobs feature
 - [x] Save jobs locally/offline with **Redux Persist**
-- [ ] **Push Notifications** for updates
+- [x] **Push Notifications** for updates
 - [ ] Try Lottie [animations](https://github.com/react-community/lottie-react-native) on intro screen
 - [ ] UI polish such as time and date for jobs
 - [ ] Attach the screenshots/gif of screens to `README.MD`
