@@ -3,6 +3,7 @@ import { View, Text, Platform, ScrollView, StyleSheet } from 'react-native';
 import { Button, Card } from 'react-native-elements'
 import { connect } from 'react-redux';
 import { WebBrowser } from 'expo';
+import { timeSince } from '../utils/time';
 
 class ReviewScreen extends React.Component {
   state = {
@@ -30,7 +31,7 @@ class ReviewScreen extends React.Component {
 
   renderLikedJobs() {
     return this.props.likedJobs.map(job => {
-      const { id, company, created_at, url, title, company_logo} = job;
+      const { id, company, created_at, url, title, company_logo } = job;
       return (
         <Card
           key={id}
@@ -46,7 +47,11 @@ class ReviewScreen extends React.Component {
           <View style={{ height: 130 }}>
             <View style={styles.detailWrapper}>
               <Text style={styles.italics}>{company}</Text>
-              <Text style={styles.italics}>{created_at}</Text>
+              <Text style={styles.italics}>{job.type}</Text>
+            </View>
+            <View style={styles.detailWrapper}>
+              <Text style={styles.normal}>{job.location}</Text>
+              <Text style={styles.normal}>{timeSince(job.created_at)}</Text>
             </View>
             <Button
               title="Apply Now!"
@@ -87,7 +92,12 @@ const styles = StyleSheet.create({
   },
   italics: {
     fontStyle: 'italic',
-  }
+    fontSize: 18,
+  },
+  normal: {
+    fontStyle: 'normal',
+    fontSize: 16,
+  },
 })
 function mapStateToProps(state) {
   return { likedJobs: state.likedJobs }

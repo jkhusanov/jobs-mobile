@@ -6,6 +6,7 @@ import { MapView } from 'expo';
 import * as actions from '../actions';
 import Swipe from '../components/Swipe';
 import { Entypo } from '@expo/vector-icons';
+import { timeSince } from '../utils/time';
 
 
 class DeckScreen extends React.Component {
@@ -49,10 +50,14 @@ class DeckScreen extends React.Component {
 
         </View> */}
         <View style={styles.detailWrapper}>
-          <Text>{job.company}</Text>
-          <Text>{job.created_at}</Text>
+          <Text style={styles.italics}>{job.company}</Text>
+          <Text style={styles.italics}>{job.type}</Text>
+
         </View>
-        <Text>{job.type}</Text>
+        <View style={styles.detailWrapper}>
+          <Text style={styles.normal}>{job.location}</Text>
+          <Text style={styles.normal}>{timeSince(job.created_at)}</Text>
+        </View>
       </Card>
     );
   }
@@ -102,6 +107,14 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-around',
     marginBottom: 10,
+  },
+  italics: {
+    fontStyle: 'italic',
+    fontSize: 18,
+  },
+  normal: {
+    fontStyle: 'normal',
+    fontSize: 16,
   },
 })
 
