@@ -2,16 +2,23 @@
 Following advanced Udemy [React Native: Advanced Concepts course](https://www.udemy.com/react-native-advanced/learn/v4/overview)
 
 ## Main Goal
-Creating an awesome app that helps you find jobs near you.
+Creating an awesome app that helps you find jobs near you. Just let the app know your location and then it will find tech jobs in that location. Uses [GitHub Jobs](https://jobs.github.com/api) to find jobs. State management and data storage are handled with Redux and Redux Persist. 
 
 
 ### [Demo - Try it on Expo](https://expo.io/@jkhusanov/jobs-mobile)
 
 ## Demo, screenshots, coming soon
-<!-- <div style={{display: flex; flex-direction: row}}>
+![jobs_demo](https://github.com/jkhusanov/jobs-mobile/blob/master/screenshots/demo.gif)
+
+<div style={{display: flex; flex-direction: row}}>
   <img src="screenshots/1-image.png" width="270" />
   <img src="screenshots/2-image.png" width="270" />
-</div> -->
+  <img src="screenshots/3-image.png" width="270" />
+  <img src="screenshots/4-image.png" width="270" />
+  <img src="screenshots/5-image.png" width="270" />
+  <img src="screenshots/6-image.png" width="270" />
+  <img src="screenshots/7-image.png" width="200" />
+</div>
 
 
 
@@ -52,7 +59,8 @@ expo ios
 - [x] **Push Notifications** for updates
 - [x] Try **Lottie** [animations](https://github.com/react-community/lottie-react-native) on intro screen
 - [x] UI polish such as time and date for jobs
-- [ ] Attach the screenshots/gif of screens to `README.MD`
+- [x] Find jobs based on current location on initial launch
+- [x] Attach the screenshots/gif of screens to `README.MD`
 
 ## Wireframes and project plan
 

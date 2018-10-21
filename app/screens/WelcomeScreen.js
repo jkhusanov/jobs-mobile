@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, AsyncStorage } from 'react-native';
+import { View, Text, StyleSheet, AsyncStorage, Dimensions} from 'react-native';
 import { Button } from 'react-native-elements';
 import { LinearGradient, AppLoading, DangerZone } from 'expo';
 const { Lottie } = DangerZone;
@@ -97,6 +97,7 @@ export default class WelcomeScreen extends React.Component {
                   style={{
                     width: 400,
                     height: 400,
+                    alignSelf: 'center'
                   }}
                   source={this.state.animation}
                 />}
@@ -115,6 +116,7 @@ export default class WelcomeScreen extends React.Component {
                   style={{
                     width: 310,
                     height: 310,
+                    alignSelf: 'center'
                   }}
                   source={this.state.animation2}
                 />}
@@ -133,6 +135,7 @@ export default class WelcomeScreen extends React.Component {
                   style={{
                     width: 400,
                     height: 400,
+                    alignSelf: 'center'
                   }}
                   source={this.state.animation3}
                 />}
