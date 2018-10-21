@@ -7,7 +7,7 @@ What do you do when you're looking for a job? Well, you can create an awesome ap
 
 ### [Demo - Try it on Expo](https://expo.io/@jkhusanov/jobs-mobile)
 
-## Demo, screenshots, coming soon
+## Demo, screenshots
 ![jobs_demo](https://github.com/jkhusanov/jobs-mobile/blob/master/screenshots/demo.gif)
 
 <div style={{display: flex; flex-direction: row}}>
