@@ -2,7 +2,7 @@
 Following advanced Udemy [React Native: Advanced Concepts course](https://www.udemy.com/react-native-advanced/learn/v4/overview)
 
 ## Main Goal
-Creating an awesome app that helps you find jobs near you. Just let the app know your location and then it will find tech jobs in that location. Uses [GitHub Jobs](https://jobs.github.com/api) to find jobs. State management and data storage are handled with Redux and Redux Persist. 
+What do you do when you're looking for a job? Well, you can create an awesome app that helps you find jobs near you 😄 Just let the app know your location and then it will find tech jobs in that location. Uses [GitHub Jobs](https://jobs.github.com/api) to find jobs. State management and data storage are handled with Redux and Redux Persist. 
 
 
 ### [Demo - Try it on Expo](https://expo.io/@jkhusanov/jobs-mobile)
